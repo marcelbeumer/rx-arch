@@ -21,6 +21,7 @@ COPY --chown=agent agents/opencode /home/agent/.config/opencode
 COPY --chown=agent agents/pi /home/agent/.pi
 COPY --chown=agent agents/config/sandbox/AGENTS.md /home/agent/.config/opencode/AGENTS.md
 COPY --chown=agent agents/config/sandbox/AGENTS.md /home/agent/.pi/agent/AGENTS.md
+COPY --chown=agent dotfiles/agents /home/agent/.agents
 
 WORKDIR /workspace
 CMD ["bash"]

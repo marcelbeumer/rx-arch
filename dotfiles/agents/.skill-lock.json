@@ -8,7 +8,7 @@
       "skillPath": "go/SKILL.md",
       "skillFolderHash": "9bd0e07b40a65c5a579a3bdf7e24126a5529800a",
       "installedAt": "2026-09-10T20:58:10.304Z",
-      "updatedAt": "2026-09-10T20:59:51.635Z"
+      "updatedAt": "2026-09-10T21:03:40.487Z"
     },
     "go-spec-reviewer": {
       "source": "spf13/go-skills",
@@ -17,7 +17,7 @@
       "skillPath": "go-spec-reviewer/SKILL.md",
       "skillFolderHash": "5e5cc532f933f5dbb81ab7f25ee716123c0a0ef0",
       "installedAt": "2026-09-10T20:58:10.305Z",
-      "updatedAt": "2026-09-10T20:59:51.636Z"
+      "updatedAt": "2026-09-10T21:03:40.489Z"
     },
     "go-release": {
       "source": "spf13/go-skills",
@@ -26,7 +26,7 @@
       "skillPath": "go-release/SKILL.md",
       "skillFolderHash": "5949fa8fd3268bb94a674cffb3bec66e52bd782a",
       "installedAt": "2026-09-10T20:58:10.306Z",
-      "updatedAt": "2026-09-10T20:59:51.637Z"
+      "updatedAt": "2026-09-10T21:03:40.488Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -34,8 +34,8 @@
       "sourceUrl": "https://github.com/vercel-labs/skills.git",
       "skillPath": "skills/find-skills/SKILL.md",
       "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
-      "installedAt": "2026-09-10T20:58:15.706Z",
-      "updatedAt": "2026-09-10T20:58:15.706Z"
+      "installedAt": "2026-09-10T21:06:08.054Z",
+      "updatedAt": "2026-09-10T21:06:08.054Z"
     }
   },
   "dismissed": {

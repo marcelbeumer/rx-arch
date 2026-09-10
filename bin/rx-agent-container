@@ -31,6 +31,7 @@ exec "$runtime" run -it --rm \
   -v "$HOME/.local/share/rx/agents/pi:/home/agent/.pi" \
   -v "$HOME/.local/share/rx/agents/config/sandbox/AGENTS.md:/home/agent/.config/opencode/AGENTS.md" \
   -v "$HOME/.local/share/rx/agents/config/sandbox/AGENTS.md:/home/agent/.pi/agent/AGENTS.md" \
+  -v "$HOME/.local/share/rx/dotfiles/agents:/home/agent/.agents" \
   -v "$HOME/.local/share/opencode:/home/agent/.local/share/opencode" \
   "${extra_mounts[@]}" \
   rx-agent-box \
