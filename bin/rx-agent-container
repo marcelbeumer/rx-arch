@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# usage: rx-agent-container [--runtime podman|docker] <agent> [args...]
+# usage: rx-agent-container [--runtime podman|docker] <cmd> [args...]
 runtime="podman"
 extra_mounts=()
 while [[ $# -gt 0 ]]; do
@@ -20,6 +20,15 @@ fi
 userns_args=()
 [[ "$runtime" == "podman" ]] && userns_args=(--userns=keep-id)
 
+cmd="${1:-}"
+shift
+
+if [[ "${HERDR_ENV:-}" == "1" && ( "$cmd" == "opencode" || "$cmd" == "pi" ) ]]; then
+  export HERDR_AGENT="$cmd"
+  herdr pane report-metadata "${HERDR_PANE_ID:-}" --source "rx:container" \
+    --display-agent "$cmd (container)" 2>/dev/null || true
+fi
+
 exec "$runtime" run -it --rm \
   --user agent \
   "${userns_args[@]}" \
@@ -35,4 +44,4 @@ exec "$runtime" run -it --rm \
   -v "$HOME/.local/share/opencode:/home/agent/.local/share/opencode" \
   "${extra_mounts[@]}" \
   rx-agent-box \
-  "$@"
+  "$cmd" "$@"

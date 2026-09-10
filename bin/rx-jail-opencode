@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 if [[ "${HERDR_ENV:-}" == "1" ]]; then
+  herdr pane report-metadata "${HERDR_PANE_ID:-}" --source "rx:jail" \
+    --display-agent "opencode (jail)" 2>/dev/null || true
   HERDR_AGENT=opencode exec ai-jail opencode "$@"
 else
   exec ai-jail opencode "$@"
