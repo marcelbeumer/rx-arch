@@ -5,6 +5,7 @@ cat > ~/.ai-jail << 'EOF'
 no_save_config = true
 network = true
 private_home = true
+terminal_passthrough = true
 
 ro_maps = [
   "~/.local/share/nvim/mason",
