@@ -37,3 +37,4 @@ auto_switch = false
 pane_gaps = true
 pane_outer_borders = true
 pane_scrollbars = false
+sidebar_collapsed_mode = "hidden"
