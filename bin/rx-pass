@@ -1,5 +1,4 @@
 #!/bin/bash
-# Written with assistance from Claude (Anthropic, claude-sonnet-4-6)
 
 passdir="${PASSWORD_STORE_DIR:-$HOME/.password-store}"
 statefile="${XDG_RUNTIME_DIR:-/tmp}/passrofi.state"

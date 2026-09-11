@@ -3,15 +3,6 @@
 timezones=("Europe/Amsterdam" "America/New_York" "America/Los_Angeles" "UTC")
 
 for tz in "${timezones[@]}"; do
-  if [ -z "$tz" ]; then
-    label="Local"
-  else
-    label="$tz"
-  fi
-  if [ -n "$tz" ]; then
-    time=$(TZ="$tz" date "+%A %d %B %H:%M %Z")
-  else
-    time=$(date "+%A %d %B %H:%M %Z")
-  fi
-  printf "%s %s\n" "$time" "$label"
+  time=$(TZ="$tz" date "+%A %d %B %H:%M %Z")
+  printf "%s %s\n" "$time" "$tz"
 done

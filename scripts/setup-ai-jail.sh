@@ -10,7 +10,7 @@ ro_maps = [
   "~/.local/share/nvim/mason",
 ]
 
-# Global rw_maps for easy of use.
+# Global rw_maps for ease of use.
 # Could split up in [command.<command>] blocks if needed.
 rw_maps = [
   "~/g/allow",

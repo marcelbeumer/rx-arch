@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-unlink() {
+unlink_agent() {
   local dst="$1"
   if [[ -L "$dst" ]]; then
     rm "$dst"
@@ -11,5 +11,5 @@ unlink() {
   fi
 }
 
-unlink "$HOME/.config/opencode"
-unlink "$HOME/.pi"
+unlink_agent "$HOME/.config/opencode"
+unlink_agent "$HOME/.pi"

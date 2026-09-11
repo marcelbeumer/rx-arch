@@ -20,7 +20,7 @@ set -euo pipefail
 #   Exec = /path/to/rx-sync-snapper-boot
 #   Depends = snapper
 
-case "${1:-}" in -h|--help) echo "Usage: rx-sync-snapper-boot [count=5]"; exit ;; esac
+case "${1:-}" in -h|--help) echo "Usage: rx-sync-snapper-boot [count=10]"; exit ;; esac
 
 COUNT="${1:-10}"
 ENTRIES_DIR="/boot/loader/entries"
@@ -40,14 +40,14 @@ rm -f "$ENTRIES_DIR"/snapshot-*.conf
 
 # Create new entries.
 for snap in $snapshots; do
-	opts=$(echo "$base_options" | sed "s|subvol=@[^ ]*|subvol=@/.snapshots/${snap}/snapshot|")
+  opts=$(echo "$base_options" | sed "s|subvol=@[^ ]*|subvol=@/.snapshots/${snap}/snapshot|")
 
-	cat > "$ENTRIES_DIR/snapshot-${snap}.conf" <<-EOF
-	title   Arch Linux (snapshot ${snap})
-	${base_linux}
-	${base_initrd}
-	${opts}
-	EOF
+  cat > "$ENTRIES_DIR/snapshot-${snap}.conf" <<EOF
+title   Arch Linux (snapshot ${snap})
+${base_linux}
+${base_initrd}
+${opts}
+EOF
 
-	echo ":: snapshot-${snap}.conf"
+  echo ":: snapshot-${snap}.conf"
 done

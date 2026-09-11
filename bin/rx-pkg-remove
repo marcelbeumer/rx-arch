@@ -17,7 +17,7 @@ fzf_args=(
 pkg_names=$(yay -Qqe | fzf "${fzf_args[@]}")
 
 if [[ -n "$pkg_names" ]]; then
-  # Convert newline-separated selections to space-separated for yay
+  # Convert newline-separated selections to space-separated for pacman
   echo "$pkg_names" | tr '\n' ' ' | xargs sudo pacman -Rns --noconfirm
   rx-show-done
 fi

@@ -6,12 +6,14 @@ script_path="$(readlink -f "$0")"
 themes_dir="$(cd "$(dirname "$script_path")/../themes" && pwd)"
 config_dir="$(cd "$(dirname "$script_path")/../config" && pwd)"
 
-case "${1:-}" in -l|--list) 
-  for dir in $themes_dir/*; do
-    basename "$dir"
-  done
-  exit 
-;; esac
+case "${1:-}" in
+  -l|--list)
+    for dir in "$themes_dir"/*; do
+      basename "$dir"
+    done
+    exit 0
+    ;;
+esac
 
 if [ -z "$1" ]; then
   if [ -f "$current" ]; then

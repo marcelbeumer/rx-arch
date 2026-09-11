@@ -14,7 +14,9 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
+set -a
 source /etc/rx-backup.env
+set +a
 
 repo="${RESTIC_REPO:?RESTIC_REPO is not set}"
 

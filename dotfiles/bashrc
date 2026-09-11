@@ -53,10 +53,6 @@ source_env() {
   set +a
 }
 
-if [ -f ~/.bash_aws ]; then
-  . ~/.bash_aws
-fi
-
 FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
