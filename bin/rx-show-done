@@ -1,4 +1,4 @@
 #!/bin/bash
 
+read -n 1 -s -r -p "[Done. Press any key to continue...]"
 echo
-gum spin --spinner "pulse" --title "Done! Press any key to close..." -- bash -c 'read -n 1 -s'
