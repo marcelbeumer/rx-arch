@@ -31,6 +31,11 @@ for file in xdg-applications/*.desktop; do
   link "$script_dir/$file" "$HOME/.local/share/applications/$name"
 done
 
+# Shared chat workspace instructions.
+mkdir -p "$HOME/dev/chat"
+mkdir -p "$HOME/dev/chat-archive" # manual copy/move
+link "$script_dir/agents/chat/AGENTS.md" "$HOME/dev/chat/AGENTS.md"
+
 # Expose the whole arch tree read-only at ~/.local/share/rx so that both the
 # wrapper scripts (rx/bin) and the agent config (rx/agents) resolve from one
 # namespace. State/auth/sessions live separately under ~/.local/state/rx.
