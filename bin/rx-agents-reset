@@ -2,13 +2,11 @@
 set -euo pipefail
 
 # opencode: conversation history + transient state
-rm -f "$HOME/.local/share/opencode/opencode.db" \
-      "$HOME/.local/share/opencode/opencode.db-shm" \
-      "$HOME/.local/share/opencode/opencode.db-wal"
-rm -rf "$HOME/.local/share/opencode/snapshot"
-rm -rf "$HOME/.local/share/opencode/tool-output"
-rm -f  "$HOME/.local/share/opencode/log/opencode.log"
-rm -rf "$HOME/.local/state/opencode"
+rm -f  "$HOME/.local/share/opencode/opencode.db"* \
+       "$HOME/.local/share/opencode/log/opencode.log"
+rm -rf "$HOME/.local/share/opencode/snapshot" \
+       "$HOME/.local/share/opencode/tool-output" \
+       "$HOME/.local/state/opencode"
 
 # pi: session history only
 rm -rf "$HOME/.pi/agent/sessions"
